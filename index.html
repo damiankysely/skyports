@@ -37,9 +37,10 @@
   </head>
   <body>
     <div id='map'></div>
+    
     map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['capitaland-singapore'] // replace this with the name of the layer
+    layers: [capitaland-singapore] // replace this with the name of the layer
   });
 
   if (!features.length) {
@@ -53,7 +54,8 @@
     .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
-});
+    });
+    
     <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2t5cG9ydHMiLCJhIjoiY2p2cDdwMmRnMXBycTQ0cGk0NTdnb2NsOCJ9.TD5MZWxOJzyCksdn2WCYfg'; // replace this with your access token
     var map = new mapboxgl.Map({
