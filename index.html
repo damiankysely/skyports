@@ -11,7 +11,16 @@
 
   if (!features.length) {
     return;
-  }</script>
+  }
+  
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
+    });</script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <style>
       body {
@@ -30,15 +39,6 @@
   </head>
   <body>
     <div id='map'></div>
-
-  var feature = features[0];
-
-  var popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
-    });
     
     <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2t5cG9ydHMiLCJhIjoiY2p2cDdwMmRnMXBycTQ0cGk0NTdnb2NsOCJ9.TD5MZWxOJzyCksdn2WCYfg'; // replace this with your access token
