@@ -4,7 +4,14 @@
     <meta charset='utf-8' />
     <title>Singapore Vertiport Network</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'> map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['capitaland-singapore'] // replace this with the name of the layer
+  });
+
+  if (!features.length) {
+    return;
+  }</script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <style>
       body {
@@ -23,15 +30,6 @@
   </head>
   <body>
     <div id='map'></div>
-    
-    map.on('click', function(e) {
-  var features = map.queryRenderedFeatures(e.point, {
-    layers: ['capitaland-singapore'] // replace this with the name of the layer
-  });
-
-  if (!features.length) {
-    return;
-  }
 
   var feature = features[0];
 
