@@ -12,7 +12,7 @@
   if (!features.length) {
     return;
   }
-  
+
   var feature = features[0];
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
@@ -20,7 +20,7 @@
     .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
-    });</script>
+});</script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <style>
       body {
